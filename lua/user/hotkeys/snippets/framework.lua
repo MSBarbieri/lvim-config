@@ -1,11 +1,31 @@
-local utils = require("utils")
+local react_hotkeys = {
+  name = "react",
+  c = { function()
+    Snippets.execute_lang_snippet('component')
+  end, "class component" },
+  n = { function()
+    Snippets.execute_lang_snippet('fn_component')
+  end, "function component" },
+  u = { "", "use state" },
+  e = { "", "use effect" },
+}
+local express_hotkeys = {
+  name = "express",
+  c = { function()
+    Snippets.execute_lang_snippet('controller')
+  end, "Controller" },
+  s = { "", "Service" },
+  r = { "", "Repository" },
+  u = { "", "Result 200" },
+  a = { "", "Result 401" },
+  ['.'] = { "", "Err 500" },
+}
 
-local function framework(snippets)
-  snippets.w = {
+local function framework(command)
+  command.w = {
     name = "framework",
-    u = { function()
-      utils.snippets.execute_lang_snippet('nil')
-    end, "nil" },
+    r = react_hotkeys,
+    e = express_hotkeys,
   }
 end
 

@@ -7,17 +7,8 @@ local code = function()
     s = snippets(),
     p = lsp(),
     r = { vim.lsp.buf.rename, "Rename" },
-    a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-    l = {
-      vim.diagnostic.goto_next,
-      "Next Diagnostic",
-    },
-    h = {
-      vim.diagnostic.goto_prev,
-      "Prev Diagnostic",
-    },
     e = { vim.diagnostic.setloclist, "Quickfix" },
-    ["."] = { "<cmd>Telescope diagnostics<cr>", "Diagnostic" },
+    a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
   }
 end
 return code

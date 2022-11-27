@@ -1,0 +1,31 @@
+{
+  "component": {
+    "description": "Define a module",
+    "prefix": "component",
+    "body": [
+      "class Foo {",
+      "  protected repository: any;",
+      "  protected validator: any;",
+      "  protected notificationService: any;",
+      "",
+      "  contructor(...injectedArgs: any) {",
+      "    this.repository = injectedArgs.repository;",
+      "    this.notificationService = injectedArgs.notificationService;",
+      "    this.validator = injectedArgs.validator;",
+      "  }",
+      "",
+      "  async post(req: Request, res: Response) {",
+      "    const data = req.body;",
+      "    try {",
+      "      this.validator.validateGet(data);",
+      "",
+      "      this.repository.add(data);",
+      "      await res.json()",
+      "    } catch (e) {",
+      "",
+      "    }",
+      "  }",
+      "}"
+    ]
+  }
+}

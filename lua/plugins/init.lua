@@ -10,7 +10,7 @@ lvim.plugins = {
     cmd = "TroubleToggle",
   },
   { "wellle/context.vim" },
-  { "dbeniamine/cheat.sh-vim" },
+  -- { "dbeniamine/cheat.sh-vim" },
   -- { "rcarriga/nvim-dap-ui" },
   { "beauwilliams/focus.nvim", config =
   function()

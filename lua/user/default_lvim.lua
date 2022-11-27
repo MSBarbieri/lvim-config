@@ -1,4 +1,4 @@
-lvim.builtin.lualine.active = false
+lvim.builtin.lualine.active = true
 
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = true

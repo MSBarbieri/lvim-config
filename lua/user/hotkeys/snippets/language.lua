@@ -1,62 +1,91 @@
-local utils = require("utils")
-
-local function language(snippets)
-  snippets.i = {
+local function language(command)
+  command.i = {
     name = "if",
     t = { function()
-      utils.snippets.execute_lang_snippet('if')
+      Snippets.execute_lang_snippet('if')
     end, "tiny" },
     l = { function()
-      utils.snippets.execute_lang_snippet('if_let')
+      Snippets.execute_lang_snippet('if_let')
     end, "if-let" },
     e = { function()
-      utils.snippets.execute_lang_snippet('elif')
+      Snippets.execute_lang_snippet('elif')
     end, "elif" },
     m = { function()
-      utils.snippets.execute_lang_snippet('match')
+      Snippets.execute_lang_snippet('match')
     end, "match" },
   }
 
+  command.l = {
+    name = "log",
+    b = { function()
+      Snippets.execute_lang_snippet('print')
+    end, "base" },
+    d = { function()
+      Snippets.execute_lang_snippet('debug')
+    end, "Debug" },
+    i = { function()
+      Snippets.execute_lang_snippet('info')
+    end, "Info" },
+    w = { function()
+      Snippets.execute_lang_snippet('warn')
+    end, "Warning" },
+  }
 
-  snippets.n = {
+  command.t = {
+    name = "type",
+    a = { function()
+      Snippets.execute_lang_snippet('type')
+    end, "class/struct" },
+    m = { function()
+      Snippets.execute_lang_snippet('method')
+    end, "method" },
+    i = { function()
+      Snippets.execute_lang_snippet('interface')
+    end, "interface" },
+    p = { function()
+      Snippets.execute_lang_snippet('prop')
+    end, "property" },
+    g = { function()
+      Snippets.execute_lang_snippet('getter')
+    end, "getter" },
+    s = { function()
+      Snippets.execute_lang_snippet('setter')
+    end, "setter" },
+  }
+
+  command.n = {
     function()
-      utils.snippets.execute_lang_snippet('fn')
+      Snippets.execute_lang_snippet('fn')
     end, "function"
   }
 
-  snippets.u = {
-    name = "utils",
-    p = { function()
-      utils.snippets.execute_lang_snippet('print')
-    end, "print" },
+  command.u = {
+    name = "",
     w = { function()
-      utils.snippets.execute_lang_snippet('warn')
+      Snippets.execute_lang_snippet('warn')
     end, "warning" },
     t = { function()
-      utils.snippets.execute_lang_snippet('test')
+      Snippets.execute_lang_snippet('test')
     end, "test" },
     v = { function()
-      utils.snippets.execute_lang_snippet('test')
+      Snippets.execute_lang_snippet('test')
     end, "vec" },
   }
-  -- fi = { function()
-  --   utils.snippets.execute_lang_snippet('inline')
-  -- end, "inline" },
 
-  snippets.a = { function()
-    utils.snippets.execute_lang_snippet('assign')
+  command.a = { function()
+    Snippets.execute_lang_snippet('assign')
   end, "assign" }
 
-  snippets.f = {
+  command.f = {
     name = "loops",
     f = { function()
-      utils.snippets.execute_lang_snippet('for')
+      Snippets.execute_lang_snippet('for')
     end, "for" },
     e = { function()
-      utils.snippets.execute_lang_snippet('foreach')
+      Snippets.execute_lang_snippet('foreach')
     end, "foreach" },
     w = { function()
-      utils.snippets.execute_lang_snippet('while')
+      Snippets.execute_lang_snippet('while')
     end, "while" },
   }
 end
