@@ -60,7 +60,7 @@ local function language(command)
   }
 
   command.u = {
-    name = "",
+    name = "utils",
     w = { function()
       Snippets.execute_lang_snippet('warn')
     end, "warning" },

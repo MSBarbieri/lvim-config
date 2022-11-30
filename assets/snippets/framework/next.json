@@ -1,0 +1,52 @@
+{
+  "next_link": {
+    "prefix": "next_link",
+    "body": [
+      "<Link href=\"$1\">",
+      "\t<a>",
+      "\t\t$0",
+      "\t</a>",
+      "</Link>"
+    ],
+    "description": "Next.js Link Tag with <a>"
+  },
+  "next_image": {
+    "prefix": "next_image",
+    "body": "<Image alt=\"$1\" src=\"$1\" width=\"$1\" height=\"$1\" />",
+    "description": "Use sized Next Image component"
+  },
+  "next_get_static_paths": {
+    "prefix": "next_get_static_paths",
+    "body": [
+      "export async function getStaticPaths() {",
+      "\treturn {",
+      "\t\tpaths: [",
+      "\t\t\t{ params: { $1 }}",
+      "\t\t],",
+      "\t\tfallback: $2",
+      "\t};",
+      "}"
+    ],
+    "description": "Next.js pre-renders all the static paths https://nextjs.org/docs/basic-features/data-fetching#getstaticpaths-static-generation"
+  },
+  "next_get_initial_props": {
+    "prefix": "next_get_initial_props",
+    "body": [
+      "static async getInitialProps() {",
+      "\treturn { $1 };",
+      "}"
+    ],
+    "description": "Next.js static async getInitialProps() inside Class Component"
+  },
+  "next_gsp": {
+    "prefix": "next_gsp",
+    "body": [
+      "export async function getStaticProps(context) {",
+      "\treturn {",
+      "\t\tprops: {$1}",
+      "\t};",
+      "}"
+    ],
+    "description": "Next.js getStaticProps() export"
+  }
+}

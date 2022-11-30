@@ -38,6 +38,7 @@ end
 
 M.execute_snippet = function(snip_code)
   local snippet, expand_params = M.match_snippet(snip_code, 'snippets')
+  print(snip_code, snippet)
   if expand_params then
     vim.api.nvim_command(':exe "normal" "o"')
     luasnip.snip_expand(snippet, {
@@ -48,15 +49,24 @@ end
 
 M.get_snippets = function(snippet)
   local lang = vim.bo.filetype
-  local result = M.snippets.langs[lang][snippet]
-  if result then
-    if type(result) == "table" then
-      return result.prefix
+  if M.snippets.langs[lang] then
+    local result = M.snippets.langs[lang][snippet]
+    if result then
+      if type(result) == "table" then
+        return result.prefix
+      end
+      return result
+    else
+      for fw, i in pairs(M.snippets.frameworks) do
+        result = M.snippets.frameworks[fw][snippet]
+        if result then
+          return result.prefix
+        end
+      end
     end
-    return result
   else
     for fw, i in pairs(M.snippets.frameworks) do
-      result = M.snippets.frameworks[fw][snippet]
+      local result = M.snippets.frameworks[fw][snippet]
       if result then
         return result.prefix
       end
@@ -75,7 +85,7 @@ M.setup = function(opts)
   opts = opts or {}
   opts = utils.merge_table(opts, Default)
   M.snippets = opts.snippets
-  require("luasnip.loaders.from_vscode").lazy_load({ paths = { "assets/snippets" } })
+  require("luasnip.loaders.from_vscode").load({ paths = { M.base_path } })
   M.load_snippets()
   return M
 end

@@ -6,6 +6,7 @@ local lsp = require("user.hotkeys.lsp")
 local code = require("user.hotkeys.code")
 local snippets = require("user.hotkeys.snippets")
 local diagnostics = require("user.hotkeys.diagnostics")
+local utils = require("utils")
 
 lvim.builtin.which_key.mappings["f"] = search()
 lvim.builtin.which_key.mappings["l"] = lsp()

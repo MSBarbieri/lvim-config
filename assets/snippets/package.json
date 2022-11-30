@@ -7,21 +7,27 @@
     "snippets": [
       {
         "language": [
-          "all"
+          "rust"
         ],
         "path": "./languages/rust.json"
       },
       {
         "language": [
-          "all"
+          "javascript",
+          "typescript",
+          "javascriptreact",
+          "typescriptreact"
         ],
         "path": "./framework/react.json"
       },
       {
         "language": [
-          "all"
+          "javascript",
+          "typescript",
+          "javascriptreact",
+          "typescriptreact"
         ],
-        "path": "./framework/express.json"
+        "path": "./framework/next.json"
       }
     ]
   }

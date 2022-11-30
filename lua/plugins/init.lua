@@ -10,8 +10,7 @@ lvim.plugins = {
     cmd = "TroubleToggle",
   },
   { "wellle/context.vim" },
-  -- { "dbeniamine/cheat.sh-vim" },
-  -- { "rcarriga/nvim-dap-ui" },
+  { "RishabhRD/nvim-cheat.sh" },
   { "beauwilliams/focus.nvim", config =
   function()
     require("focus").setup()
@@ -20,6 +19,7 @@ lvim.plugins = {
   { 'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" } },
   { 'chrisbra/unicode.vim' },
   { 'nvim-telescope/telescope-symbols.nvim' },
+  { 'RishabhRD/popfix' },
   {
     'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end
   }
