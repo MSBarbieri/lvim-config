@@ -1,0 +1,49 @@
+local colors = {
+  g1 = '#848484',
+  g2 = '#585858',
+  g3 = '#262626',
+  mainbar = '#121212',
+}
+
+local personal_theme = {
+  normal = {
+    a = { fg = colors.mainbar, bg = colors.g2 },
+    b = { fg = colors.g1, bg = colors.g3 },
+    c = { fg = colors.g1, bg = colors.mainbar },
+  },
+
+  insert = { a = { fg = colors.mainbar, bg = colors.g1 } },
+  visual = { a = { fg = colors.mainbar, bg = colors.g1 } },
+  replace = { a = { fg = colors.mainbar, bg = colors.g1 } },
+
+  inactive = {
+    a = { fg = colors.g1, bg = colors.mainbar },
+    b = { fg = colors.g1, bg = colors.mainbar },
+    c = { fg = colors.mainbar, bg = colors.mainbar },
+  },
+}
+lvim.builtin.lualine.options.theme = personal_theme
+lvim.builtin.lualine.style = "default"
+lvim.builtin.lualine.active = true
+
+
+
+lvim.colorscheme = "tokyonight"
+-- colorscheme
+require('tokyonight').setup({
+  style = "night",
+  styles = {
+    floats = "transparent",
+    sidebars = "transparent"
+  },
+  on_colors = function(colors)
+    colors.comment = "#848484"
+
+    colors.bg_dark = "#121212"
+    colors.bg_popup = "#121212"
+    colors.bg_highlight = "#262626"
+    colors.terminal_black = "#262626"
+
+  end,
+  use_background = false
+})

@@ -1,5 +1,3 @@
-lvim.builtin.lualine.active = true
-
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = true
 lvim.lsp.installer.automatic_installation = true
@@ -14,11 +12,6 @@ lvim.builtin.terminal.active = true
 lvim.builtin.dap.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 
-
--- colorscheme
-lvim.colorscheme = "nord"
-lvim.builtin.lualine.options.theme = "nord"
-lvim.builtin.lualine.style = "lvim"
 
 lvim.builtin.gitsigns.opts.numhl = true
 lvim.builtin.gitsigns.opts.current_line_blame = true
