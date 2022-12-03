@@ -36,13 +36,18 @@ require('tokyonight').setup({
     floats = "transparent",
     sidebars = "transparent"
   },
-  on_colors = function(colors)
-    colors.comment = "#848484"
+  on_colors = function(clrs)
+    clrs.comment = colors.g1 -- comments
 
-    colors.bg_dark = "#121212"
-    colors.bg_popup = "#121212"
-    colors.bg_highlight = "#262626"
-    colors.terminal_black = "#262626"
+    clrs.magenta = clrs.blue -- dashBoard Icon
+    clrs.border_highlight = colors.g1 -- telescope and whichkey border
+
+    clrs.bg_dark = colors.mainbar
+    clrs.bg_popup = colors.mainbar
+
+    clrs.bg_highlight = colors.g3 -- current line bar
+    clrs.black = colors.g3 -- ColorColumn
+    clrs.terminal_black = colors.g3
 
   end,
   use_background = false
