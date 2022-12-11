@@ -2,8 +2,8 @@ local harpoon = require("harpoon.ui")
 
 lvim.builtin.which_key.mappings["n"] = {
   name = "navigation",
-  n = { '<C-i>', "jump next" },
-  p = { '<C-o>', "jump prev" }
+  i = { '<C-i>', "jump next" },
+  o = { '<C-o>', "jump prev" }
 }
 
 lvim.builtin.which_key.mappings["h"] = {
@@ -19,7 +19,7 @@ lvim.builtin.which_key.mappings["h"] = {
     harpoon.toggle_quick_menu()
   end, "ui toggle" },
 
-  ['&'] = { function()
+  ['+'] = { function()
     harpoon.nav_file(1)
   end, "nav to file 1" },
   ['['] = { function()
@@ -28,25 +28,57 @@ lvim.builtin.which_key.mappings["h"] = {
   ['{'] = { function()
     harpoon.nav_file(3)
   end, "nav to file 3" },
-  ['}'] = { function()
+  ['('] = { function()
     harpoon.nav_file(4)
   end, "nav to file 4" },
-  ['('] = { function()
+  ['#'] = { function()
     harpoon.nav_file(5)
   end, "nav to file 5" },
   ['='] = { function()
     harpoon.nav_file(6)
   end, "nav to file 6" },
-  ['*'] = { function()
+  [')'] = { function()
     harpoon.nav_file(7)
   end, "nav to file 7" },
-  [')'] = { function()
+  ['}'] = { function()
     harpoon.nav_file(8)
   end, "nav to file 8" },
-  ['+'] = { function()
+  [']'] = { function()
     harpoon.nav_file(9)
   end, "nav to file 9" },
-  [']'] = { function()
+  ['*'] = { function()
     harpoon.nav_file(10)
   end, "nav to file 10" },
+}
+
+local luasnip = require('luasnip')
+local cmp = require("lvim.core.cmp")
+lvim.builtin.cmp.mapping["<C-p>"] = {
+  i = function(fallback)
+    if cmp.methods.jumpable(-1) then
+      luasnip.jump(-1)
+    end
+    fallback()
+  end,
+  s = function(fallback)
+    if cmp.methods.jumpable(-1) then
+      luasnip.jump(-1)
+    end
+    fallback()
+  end,
+}
+
+lvim.builtin.cmp.mapping["<C-n>"] = {
+  i = function(fallback)
+    if cmp.methods.jumpable(1) then
+      luasnip.jump(1)
+    end
+    fallback()
+  end,
+  s = function(fallback)
+    if cmp.methods.jumpable(1) then
+      luasnip.jump(1)
+    end
+    fallback()
+  end,
 }
