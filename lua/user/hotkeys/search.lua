@@ -7,13 +7,14 @@ local search = function()
     h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
     H = { "<cmd>Telescope highlights<cr>", "Find highlight groups" },
     M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+    p = { "<cmd>Telescope projections<cr>", "projects" },
     z = { "<cmd>ZkNotes<cr>", "Zk Notes" },
     r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
     R = { "<cmd>Telescope registers<cr>", "Registers" },
     e = { "<cmd>Telescope live_grep<cr>", "Text" },
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     C = { "<cmd>Telescope commands<cr>", "Commands" },
-    p = {
+    P = {
       "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
       "Colorscheme with Preview",
     },
