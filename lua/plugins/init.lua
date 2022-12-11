@@ -23,7 +23,7 @@ function M.setup(_)
       "folke/trouble.nvim",
       cmd = "TroubleToggle",
     },
-    { "wellle/context.vim" },
+    { "nvim-treesitter/nvim-treesitter-context" },
     { "RishabhRD/nvim-cheat.sh" },
     { "ThePrimeagen/git-worktree.nvim" },
     { "ThePrimeagen/harpoon" },
@@ -130,7 +130,19 @@ function M.setup(_)
           picker = "telescope"
         })
       end
-    }
+    },
+    { 'leoluz/nvim-dap-go', config = function()
+      require('dap-go').setup()
+    end },
+    { "mxsdev/nvim-dap-vscode-js", requires = { "mfussenegger/nvim-dap" } },
+    {
+      "microsoft/vscode-js-debug",
+      opt = true,
+      run = "npm install --legacy-peer-deps && npm run compile"
+    },
+    { 'haringsrob/nvim_context_vt', config = function()
+      require('nvim_context_vt').setup()
+    end }
   }
   require('plugins.test').setup(_)
 end

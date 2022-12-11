@@ -5,29 +5,16 @@ function M.setup(_)
       'andythigpen/nvim-coverage',
       config = function()
         require("coverage").setup({
-          commands = true, -- create commands
           highlights = {
             -- customize highlight groups created by the plugin
-            covered = { fg = "#C3E88D" }, -- supports style, fg, bg, sp (see :h highlight-gui)
-            uncovered = { fg = "#F07178" },
-          },
-          signs = {
-            -- use your own highlight groups or text markers
-            covered = { hl = "CoverageCovered", text = "▎" },
-            uncovered = { hl = "CoverageUncovered", text = "▎" },
-          },
-          summary = {
-            -- customize the summary pop-up
-            min_coverage = 80.0, -- minimum coverage threshold (used for highlighting)
-          },
-          lang = {
-            -- customize language specific settings
+            covered = { fg = "#0db9d7" }, -- supports style, fg, bg, sp (see :h highlight-gui)
+            uncovered = { fg = "#db4b4b" },
           },
         })
       end
     },
     {
-      "~/dev/repos/MSBarbieri/neotest/",
+      "nvim-neotest/neotest",
       requires = {
         "nvim-lua/plenary.nvim",
         "nvim-treesitter/nvim-treesitter",
@@ -39,9 +26,14 @@ function M.setup(_)
         "nvim-neotest/neotest-python"
       },
       config = function()
+        local dap = require('dap')
         require("neotest").setup({
           adapters = {
-            require("neotest-python"),
+            require("neotest-python")({
+              dap = { justmyCode = false },
+              runner = "pytest",
+              python = "python3"
+            }),
             require("neotest-plenary"),
             require("neotest-rust"),
             require("neotest-go")({
@@ -57,6 +49,7 @@ function M.setup(_)
               cwd = function(path)
                 return vim.fn.getcwd()
               end,
+              strategy_config = dap.configurations.typescript[3]
             }),
           },
         })
