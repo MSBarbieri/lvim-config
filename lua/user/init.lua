@@ -5,3 +5,4 @@ require "user.default_lvim"
 require "user.default_nvim"
 require "user.harpoon"
 require "user.worktree"
+require('user.core').setup()

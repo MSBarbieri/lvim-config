@@ -55,3 +55,4 @@ require('tokyonight').setup({
 
 lvim.builtin.breadcrumbs.active = false
 lvim.builtin.bufferline.active = false
+lvim.builtin.alpha.mode = 'startify'
