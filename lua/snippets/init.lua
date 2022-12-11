@@ -38,7 +38,6 @@ end
 
 M.execute_snippet = function(snip_code)
   local snippet, expand_params = M.match_snippet(snip_code, 'snippets')
-  print(snip_code, snippet)
   if expand_params then
     vim.api.nvim_command(':exe "normal" "o"')
     luasnip.snip_expand(snippet, {
