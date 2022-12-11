@@ -7,6 +7,7 @@ local search = function()
     h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
     H = { "<cmd>Telescope highlights<cr>", "Find highlight groups" },
     M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+    z = { "<cmd>ZkNotes<cr>", "Zk Notes" },
     r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
     R = { "<cmd>Telescope registers<cr>", "Registers" },
     e = { "<cmd>Telescope live_grep<cr>", "Text" },

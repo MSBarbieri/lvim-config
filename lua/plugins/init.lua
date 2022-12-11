@@ -85,5 +85,23 @@ lvim.plugins = {
   { "luukvbaal/stabilize.nvim",
     config = function() require("stabilize").setup() end
   },
+  {
+    'pwntester/octo.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim',
+      'kyazdani42/nvim-web-devicons',
+    },
+    config = function()
+      require "octo".setup()
+    end
+  },
+  { 'mickael-menu/zk-nvim',
+    config =
+    function()
+      require('zk').setup({
+        picker = "telescope"
+      })
+    end
   }
 }

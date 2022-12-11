@@ -17,3 +17,7 @@ lvim.builtin.which_key.mappings["da"] = { ":lua require('dapui').toggle()<CR>", 
 lvim.builtin.which_key.mappings["bd"] = { "<cmd>BufferKill<CR>", "Kill" }
 lvim.builtin.which_key.mappings["bp"] = { "<cmd>BufferLineCyclePrev<CR>", "Kill" }
 
+lvim.builtin.which_key.mappings["z"] = {
+  name = "Zk",
+  n = { "<cmd>ZkNew<cr>", "Unicode" }
+}
