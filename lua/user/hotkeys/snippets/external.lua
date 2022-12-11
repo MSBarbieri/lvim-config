@@ -1,3 +1,4 @@
+local Snippets = require("snippets")
 local function external(command)
   local misc = {
     name = "misc",

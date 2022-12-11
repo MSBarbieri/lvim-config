@@ -1,3 +1,6 @@
+local projects = require('nvim-db').projects
+local utils = require('nvim-db.utils')
+
 local function reset()
   lvim.keys.insert_mode["<C-p>"] = false
   lvim.keys.insert_mode["<C-n>"] = false
@@ -17,7 +20,12 @@ lvim.builtin.which_key.mappings["da"] = { ":lua require('dapui').toggle()<CR>", 
 lvim.builtin.which_key.mappings["bd"] = { "<cmd>BufferKill<CR>", "Kill" }
 lvim.builtin.which_key.mappings["bp"] = { "<cmd>BufferLineCyclePrev<CR>", "Kill" }
 
+lvim.builtin.which_key.vmappings["a"] = { function()
+  local query = utils.copy_selection()
+  projects.add_query(query)
+end, "print visual selection" }
+
 lvim.builtin.which_key.mappings["z"] = {
   name = "Zk",
-  n = { "<cmd>ZkNew<cr>", "Unicode" }
+  n = { "<cmd>ZkNew<cr>", "New" }
 }

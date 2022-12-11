@@ -1,3 +1,5 @@
+local Snippets = require("snippets")
+
 local function language(command)
   command.i = {
     name = "if",

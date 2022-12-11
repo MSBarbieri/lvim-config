@@ -1,3 +1,4 @@
+local Snippets = require("snippets")
 local react_hotkeys = {
   name = "react",
   c = { function()
