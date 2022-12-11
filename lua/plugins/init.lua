@@ -63,5 +63,23 @@ lvim.plugins = {
   { 'nacro90/numb.nvim', config = function()
     require('numb').setup()
   end },
+  {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup()
+    end
+  },
+  { 'simrat39/symbols-outline.nvim', config = function()
+    require('symbols-outline').setup()
+  end },
+  { 'metakirby5/codi.vim' },
+  { "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    config = function()
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
+    end },
   }
 }
