@@ -35,5 +35,33 @@ lvim.plugins = {
   { 'RishabhRD/popfix' },
   {
     'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end
+  {
+    "phaazon/hop.nvim",
+    event = "BufRead",
+    config = function()
+      require("hop").setup()
+      vim.api.nvim_set_keymap("n", "s", ":HopChar2<cr>", { silent = true })
+      vim.api.nvim_set_keymap("n", "S", ":HopWord<cr>", { silent = true })
+    end,
+  },
+  { "windwp/nvim-spectre", config = function()
+    require("spectre").setup({
+      mapping = {
+        ['send_to_qf'] = {
+          map = "<leader>e",
+          cmd = "<cmd>lua require('spectre.actions').send_to_qf()<CR>",
+          desc = "send all item to quickfix"
+        },
+      }
+    })
+  end },
+  { 'junegunn/fzf', run = function()
+    vim.fn['fzf#install']()
+  end
+  },
+  { 'kevinhwang91/nvim-bqf' },
+  { 'nacro90/numb.nvim', config = function()
+    require('numb').setup()
+  end },
   }
 }

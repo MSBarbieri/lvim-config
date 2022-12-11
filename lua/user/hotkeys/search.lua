@@ -18,4 +18,9 @@ local search = function()
     },
   }
 end
+
+lvim.builtin.which_key.mappings["F"] = { "<cmd>lua require('spectre').open()<CR>", "Spectre" }
+lvim.builtin.which_key.vmappings["f"] = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Spectre" }
+lvim.builtin.which_key.vmappings["F"] = { "<esc>:lua require('spectre').open_visual()<CR>", "Spectre" }
+
 return search
