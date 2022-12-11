@@ -52,3 +52,6 @@ require('tokyonight').setup({
   end,
   use_background = false
 })
+
+lvim.builtin.breadcrumbs.active = false
+lvim.builtin.bufferline.active = false
