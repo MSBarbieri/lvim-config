@@ -1,6 +1,5 @@
 local snippets = require("user.hotkeys.snippets")
 local lsp = require("user.hotkeys.lsp")
-local utils = require("utils")
 
 local code = function()
   return {

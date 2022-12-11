@@ -81,5 +81,8 @@ lvim.plugins = {
         -- Configuration here, or leave empty to use defaults
       })
     end },
+  { "luukvbaal/stabilize.nvim",
+    config = function() require("stabilize").setup() end
+  },
   }
 }
