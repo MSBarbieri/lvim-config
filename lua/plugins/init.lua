@@ -132,6 +132,7 @@ function M.setup(_)
       end
     }
   }
+  require('plugins.test').setup(_)
 end
 
 return M

@@ -16,7 +16,7 @@ function M.setup()
           ":lua local s = require('projections.session'); if s.info(vim.loop.cwd()) == nil then s.restore_latest() else s.restore(vim.loop.cwd()) end <cr>"),
         startify.button('p', "Projects", "<cmd>Telescope projections<cr>"),
         startify.button("f", "Find File", "<cmd>Telescope find_files<cr>"),
-        startify.button("c", "Config", "<CMD>edit " .. require("lvim.config"):get_user_config_path() .. " <CR>"),
+        startify.button("c", "Config", "<CMD>edit ~/.config/lvim/config.lua <CR>"),
 
         { type = "padding", val = 1 },
         { type = "text", val = "Links", opts = { hl = "SpecialComment", shrink_margin = false } },
