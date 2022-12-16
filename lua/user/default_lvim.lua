@@ -4,7 +4,7 @@ lvim.lsp.installer.automatic_installation = true
 lvim.builtin.dap.active = true
 lvim.leader = "space"
 
-lvim.transparent_window = true
+lvim.transparent_window = false -- transparency in tokyonight
 lvim.builtin.alpha.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.dap.active = true

@@ -51,34 +51,58 @@ lvim.builtin.which_key.mappings["h"] = {
   end, "nav to file 10" },
 }
 
-local luasnip = require('luasnip')
-local cmp = require("lvim.core.cmp")
-lvim.builtin.cmp.mapping["<C-p>"] = {
-  i = function(fallback)
-    if cmp.methods.jumpable(-1) then
-      luasnip.jump(-1)
-    end
-    fallback()
-  end,
-  s = function(fallback)
-    if cmp.methods.jumpable(-1) then
-      luasnip.jump(-1)
-    end
-    fallback()
-  end,
-}
+local function hop_keys(mode)
 
-lvim.builtin.cmp.mapping["<C-n>"] = {
-  i = function(fallback)
-    if cmp.methods.jumpable(1) then
-      luasnip.jump(1)
-    end
-    fallback()
-  end,
-  s = function(fallback)
-    if cmp.methods.jumpable(1) then
-      luasnip.jump(1)
-    end
-    fallback()
-  end,
-}
+  lvim.keys[mode]['s'] = function()
+    require("hop").hint_char2({
+      direction = require 'hop.hint'.HintDirection.AFTER_CURSOR,
+      case_inssensitive = true,
+    })
+  end
+
+  lvim.keys[mode]['f'] = function()
+    require("hop").hint_char2({
+      direction = require 'hop.hint'.HintDirection.AFTER_CURSOR,
+      current_line_only = true,
+      case_inssensitive = true,
+      hint_offset = 1
+    })
+  end
+
+  lvim.keys[mode]['t'] = function()
+    require("hop").hint_char1({
+      direction = require 'hop.hint'.HintDirection.AFTER_CURSOR,
+      current_line_only = true,
+      case_inssensitive = true,
+      hint_offset = -1
+    })
+  end
+
+  lvim.keys[mode]['S'] = function()
+    require("hop").hint_char2({
+      direction = require 'hop.hint'.HintDirection.BEFORE_CURSOR,
+      case_inssensitive = true,
+    })
+  end
+
+  lvim.keys[mode]['F'] = function()
+    require("hop").hint_char1({
+      direction = require 'hop.hint'.HintDirection.BEFORE_CURSOR,
+      current_line_only = true,
+      case_inssensitive = true,
+      hint_offset = 1
+    })
+  end
+
+  lvim.keys[mode]['T'] = function()
+    require("hop").hint_char1({
+      direction = require 'hop.hint'.HintDirection.BEFORE_CURSOR,
+      case_inssensitive = true,
+      current_line_only = true,
+      hint_offset = -1
+    })
+  end
+end
+
+hop_keys('normal_mode')
+hop_keys('visual_mode')

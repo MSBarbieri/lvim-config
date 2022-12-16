@@ -1,6 +1,7 @@
 local M = {}
 
 function M.setup()
+
   local startify = require('alpha.themes.startify')
   local function inputs()
 
@@ -22,7 +23,7 @@ function M.setup()
         { type = "text", val = "Links", opts = { hl = "SpecialComment", shrink_margin = false } },
         { type = "padding", val = 1 },
         startify.button("e", "New File", "<CMD>ene!<CR>"),
-        startify.button("n", "Zk Note", "<cmd>ZkNew<cr>"),
+        startify.button("n", "Obsidian Note", "<cmd>ObsidianNew<cr>"),
         startify.button("t", "Todo", "<cmd>e ~/.profile/TODO.md<cr>"),
       }
 

@@ -18,3 +18,9 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 
 vim.opt.showtabline = 0
+
+vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+vim.opt.foldlevelstart = 99
+vim.opt.foldlevel = 0
+vim.opt.foldmethod = 'indent'
+vim.o.foldcolumn = '1'

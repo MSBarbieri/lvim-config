@@ -44,9 +44,13 @@ function M.setup(_)
       "phaazon/hop.nvim",
       event = "BufRead",
       config = function()
-        require("hop").setup()
-        vim.api.nvim_set_keymap("n", "s", ":HopChar2<cr>", { silent = true })
-        vim.api.nvim_set_keymap("n", "S", ":HopWord<cr>", { silent = true })
+        require('hop').setup({
+          multi_windows = false,
+          case_insensitive = true,
+          teasing = true,
+          jump_on_sole_occurrence = true,
+          keys = "aoeuhtns;,.pgcrl'qjkmwvzd",
+        })
       end,
     },
     { "windwp/nvim-spectre", config = function()
@@ -60,10 +64,6 @@ function M.setup(_)
         }
       })
     end },
-    { 'junegunn/fzf', run = function()
-      vim.fn['fzf#install']()
-    end
-    },
     { 'kevinhwang91/nvim-bqf' },
     { 'nacro90/numb.nvim', config = function()
       require('numb').setup()
@@ -142,9 +142,33 @@ function M.setup(_)
     },
     { 'haringsrob/nvim_context_vt', config = function()
       require('nvim_context_vt').setup()
-    end }
+    end },
+    -- { TODO: make distant nvim works
+    --   'chipsenkbeil/distant.nvim',
+    --   config = function()
+    --     require('distant').setup {
+    --       -- Applies Chip's personal settings to every machine you connect to
+    --       --
+    --       -- 1. Ensures that distant servers terminate with no connections
+    --       -- 2. Provides navigation bindings for remote directories
+    --       -- 3. Provides keybinding to jump into a remote file's parent directory
+    --       ['*'] = require('distant.settings').chip_default()
+    --     }
+    --   end
+    -- },
+    {
+      'jghauser/fold-cycle.nvim',
+      config = function()
+        require('fold-cycle').setup({
+          open_if_max_closed = true, -- closing a fully closed fold will open it
+          close_if_max_opened = true, -- opening a fully open fold will close it
+        })
+      end
+    },
+    { 'vala-lang/vala.vim' },
   }
   require('plugins.test').setup(_)
+  require('plugins.task').setup(_)
 end
 
 return M
