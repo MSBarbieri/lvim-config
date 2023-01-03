@@ -35,7 +35,7 @@ function M.setup(_)
         })
       end },
     {
-      '~/dev/repos/MSBarbieri/projections.nvim',
+      'gnikdroy/projections.nvim',
       config = function()
         require("projections").setup({
           workspaces = {
@@ -43,8 +43,6 @@ function M.setup(_)
             "~/dev/repos/MSBarbieri",
             "~/.config",
           },
-          patterns = { ".git" },
-          ignore_patterns = { '.zk' }, -- patterns that make the project ignored
         })
 
         require('telescope').load_extension('projections')

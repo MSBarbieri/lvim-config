@@ -19,7 +19,6 @@ function M.setup(_)
     { "tools-life/taskwiki", requires = {
       { 'vimwiki/vimwiki', branch = 'dev' },
       'majutsushi/tagbar',
-      'blindFS/vim-taskwarrior',
       'powerman/vim-plugin-AnsiEsc',
     }, config = function()
       vim.cmd [[
