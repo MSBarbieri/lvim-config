@@ -1,6 +1,6 @@
 local harpoon = require("harpoon.ui")
 
-lvim.builtin.which_key.mappings["n"] = {
+lvim.builtin.which_key.mappings["h"] = {
   name = "harpoon",
   p = { function()
     harpoon.nav_prev()
@@ -100,12 +100,3 @@ end
 
 hop_keys('normal_mode')
 hop_keys('visual_mode')
-
-local function window_nav()
-  lvim.builtin.which_key.mappings['l'] = { '<CMD>wincmd l<CR>', 'move right' }
-  lvim.builtin.which_key.mappings['h'] = { '<CMD>wincmd h<CR>', 'move left' }
-  lvim.builtin.which_key.mappings['k'] = { '<CMD>wincmd k<CR>', 'move up' }
-  lvim.builtin.which_key.mappings['j'] = { '<CMD>wincmd j<CR>', 'move down' }
-end
-
-window_nav()

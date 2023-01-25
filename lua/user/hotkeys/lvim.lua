@@ -16,5 +16,5 @@ lvim.builtin.which_key.mappings["w"] = { "<CMD>w<CR>", "Save" }
 lvim.builtin.which_key.mappings["un"] = { ":lua require'telescope.builtin'.symbols{ sources = {'emoji', 'math' } }<CR>",
   "Unicode" }
 lvim.builtin.which_key.mappings["da"] = { ":lua require('dapui').toggle()<CR>", "toggle dapui" }
-lvim.builtin.which_key.mappings["bd"] = { "<cmd>BufferKill<CR>", "Kill" }
+lvim.builtin.which_key.mappings["x"] = { "<cmd>BufferKill<CR>", "Kill" }
 lvim.builtin.which_key.mappings["bp"] = { "<cmd>BufferLineCyclePrev<CR>", "Kill" }

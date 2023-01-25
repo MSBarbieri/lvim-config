@@ -6,7 +6,7 @@ local framework = require('user.hotkeys.snippets.framework')
 local function load_snippets()
 
   local command = {
-    name = "snippets",
+    name = "core.snippets",
   }
   external(command)
   language(command)

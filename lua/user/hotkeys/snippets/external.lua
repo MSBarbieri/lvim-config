@@ -1,4 +1,4 @@
-local Snippets = require("snippets")
+local Snippets = require("core.snippets")
 local function external(command)
   local misc = {
     name = "misc",

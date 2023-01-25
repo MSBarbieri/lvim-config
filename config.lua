@@ -1,3 +1,3 @@
 require("plugins").setup()
-require("snippets").setup()
+require("core.snippets").setup()
 require("user").setup()

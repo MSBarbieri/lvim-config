@@ -3,7 +3,7 @@ local snippet_collection = require("luasnip.session.snippet_collection")
 local snip_util = require("luasnip.util.util")
 local luasnip = require("luasnip")
 local utils = require("utils")
-local Default = require("snippets.default")
+local Default = require("core.snippets.default")
 local M = {
   base_path = os.getenv("HOME") .. '/.config/nvim/assets/snippets'
 }
