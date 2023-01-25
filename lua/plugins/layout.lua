@@ -22,7 +22,11 @@ function M.setup(_)
     { "nvim-treesitter/nvim-treesitter-context" },
     { "beauwilliams/focus.nvim", config =
     function()
-      require("focus").setup()
+      require("focus").setup({
+        signcolumn = false,
+        autoresize = false,
+        cursorline = true,
+      })
     end
     },
     { 'nvim-telescope/telescope-symbols.nvim' },
