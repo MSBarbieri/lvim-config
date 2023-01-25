@@ -1,6 +1,7 @@
 vim.opt.guicursor = ""
 vim.opt.nu = true
 vim.opt.relativenumber = true
+vim.opt.textwidth = 80
 
 vim.opt.updatetime = 0
 
@@ -23,6 +24,6 @@ vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 vim.opt.foldlevelstart = 99
 vim.opt.foldlevel = 0
 vim.opt.foldmethod = 'indent'
-vim.o.foldcolumn = '1'
+vim.o.foldcolumn = '0'
 
 vim.g.cheat_default_window_layout = 'vertical_split'
