@@ -74,9 +74,9 @@ local function language(command)
     end, "vec" },
   }
 
-  command.a = { function()
+  command.v = { function()
     Snippets.execute_lang_snippet('assign')
-  end, "assign" }
+  end, "var" }
 
   command.f = {
     name = "loops",
