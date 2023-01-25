@@ -30,19 +30,6 @@ function M.setup(_)
       run = "npm install --legacy-peer-deps && npm run compile"
     },
     { 'vala-lang/vala.vim' },
-    -- { TODO: make distant nvim works
-    --   'chipsenkbeil/distant.nvim',
-    --   config = function()
-    --     require('distant').setup {
-    --       -- Applies Chip's personal settings to every machine you connect to
-    --       --
-    --       -- 1. Ensures that distant servers terminate with no connections
-    --       -- 2. Provides navigation bindings for remote directories
-    --       -- 3. Provides keybinding to jump into a remote file's parent directory
-    --       ['*'] = require('distant.settings').chip_default()
-    --     }
-    --   end
-    -- },
   }
   require('plugins.test').setup(_)
   require('plugins.task').setup(_)
