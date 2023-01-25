@@ -15,29 +15,31 @@ function M.setup(_)
         use_advanced_uri = true,
       })
     end },
+    -- { "tools-life/taskwiki", requires = {
+    { 'majutsushi/tagbar' },
+    { 'powerman/vim-plugin-AnsiEsc' },
+    -- {
+    --   'vimwiki/vimwiki', branch = 'dev',
+    --   requires = {
+    --     'majutsushi/tagbar',
+    --     'powerman/vim-plugin-AnsiEsc',
+    --   },
+    --   config = function()
+    --     vim.cmd [[
+    --   let g:vimwiki_key_mappings = { 'all_maps': 0, }
 
-    { "tools-life/taskwiki", requires = {
-      { 'vimwiki/vimwiki', branch = 'dev' },
-      'majutsushi/tagbar',
-      'powerman/vim-plugin-AnsiEsc',
-    }, config = function()
-      vim.cmd [[
-      let g:vimwiki_key_mappings = { 'all_maps': 0, }
+    --   let tech_wiki = {}
+    --   let tech_wiki.path = '~/dev/repos/MSBarbieri/wiki/'
+    --   let tech_wiki.path_html = '~/dev/repos/MSBarbieri/wiki/html'
+    --   let tech_wiki.index = 'README'
 
-      let wiki_notes = {}
-      let wiki_notes.path = '~/obsidian/'
-      let wiki_notes.ext = '.md'
+    --   let obsidian = {}
+    --   let obsidian.path = '~/Dropbox/obsidian/notes/'
 
-      let tech_wiki = {}
-      let tech_wiki.path = '~/dev/repos/MSBarbieri/wiki/'
-      let tech_wiki.path_html = '~/dev/repos/MSBarbieri/wiki/html'
-      let tech_wiki.ext = '.md'
-      let tech_wiki.index = 'README'
-
-      let g:vimwiki_list = [tech_wiki,wiki_notes]
-      ]]
-    end
-    }
+    --   let g:vimwiki_list = [tech_wiki, obsidian]
+    --   ]]
+    --   end
+    -- },
   }
 
   for _, p in pairs(plugins) do
