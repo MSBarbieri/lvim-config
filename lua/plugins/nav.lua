@@ -28,7 +28,7 @@ function M.setup(_)
     end },
     { 'kevinhwang91/nvim-bqf' }, -- BETTER quickfix
     { "kylechui/nvim-surround", --  the YSSR
-      tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+      version = "*", -- Use for stability; omit to use `main` branch for the latest features
       config = function()
         require("nvim-surround").setup({
           -- Configuration here, or leave empty to use defaults

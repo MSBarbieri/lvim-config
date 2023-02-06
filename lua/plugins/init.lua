@@ -5,16 +5,15 @@ local M = {}
 function M.setup(_)
   lvim.plugins = {
     { "RishabhRD/nvim-cheat.sh" },
-    { 'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" } },
+    { 'scalameta/nvim-metals', dependencies = { "nvim-lua/plenary.nvim" } },
     {
-      'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end
+      'glacambre/firenvim', build = function() vim.fn['firenvim#install'](0) end
     },
     {
       'pwntester/octo.nvim',
-      requires = {
+      dependencies = {
         'nvim-lua/plenary.nvim',
         'nvim-telescope/telescope.nvim',
-        'kyazdani42/nvim-web-devicons',
       },
       config = function()
         require "octo".setup()
@@ -23,11 +22,11 @@ function M.setup(_)
     { 'leoluz/nvim-dap-go', config = function()
       require('dap-go').setup()
     end },
-    { "mxsdev/nvim-dap-vscode-js", requires = { "mfussenegger/nvim-dap" } },
+    { "mxsdev/nvim-dap-vscode-js", dependencies = { "mfussenegger/nvim-dap" } },
     {
       "microsoft/vscode-js-debug",
-      opt = true,
-      run = "npm install --legacy-peer-deps && npm run compile"
+      lazy = true,
+      build = "npm install --legacy-peer-deps && npm run compile"
     },
     { 'vala-lang/vala.vim' },
   }

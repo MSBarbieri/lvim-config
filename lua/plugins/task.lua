@@ -1,7 +1,7 @@
 local M = {}
 function M.setup(_)
   local plugins = {
-    { "epwalsh/obsidian.nvim", requires = {
+    { "epwalsh/obsidian.nvim", dependencies = {
       'junegunn/fzf',
       'nvim-telescope/telescope.nvim',
       'preservim/vim-markdown',
@@ -15,12 +15,12 @@ function M.setup(_)
         use_advanced_uri = true,
       })
     end },
-    -- { "tools-life/taskwiki", requires = {
+    -- { "tools-life/taskwiki", dependencies = {
     { 'majutsushi/tagbar' },
     { 'powerman/vim-plugin-AnsiEsc' },
     -- {
     --   'vimwiki/vimwiki', branch = 'dev',
-    --   requires = {
+    --   dependencies = {
     --     'majutsushi/tagbar',
     --     'powerman/vim-plugin-AnsiEsc',
     --   },
