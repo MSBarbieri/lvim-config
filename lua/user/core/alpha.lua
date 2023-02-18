@@ -18,7 +18,7 @@ function M.setup()
         startify.button('p', "Projects", "<cmd>Telescope projections<cr>"),
         startify.button("f", "Find File", "<cmd>Telescope find_files<cr>"),
         startify.button("c", "Config", "<CMD>edit ~/.config/lvim/config.lua <CR>"),
-        startify.button("o", "NixOS config", "<cmd>edit ~/.config/nixos/<cr>"),
+        startify.button("o", "NixOS config", "<cmd>edit ~/.config/nixos/flake.nix<cr>"),
         -- startify.button("u", "awesome config", "<cmd>edit ~/.config/awesome/rc.lua<cr>"),
 
         { type = "padding", val = 1 },
