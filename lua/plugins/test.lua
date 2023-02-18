@@ -49,7 +49,7 @@ function M.setup(_)
               cwd = function(path)
                 return vim.fn.getcwd()
               end,
-              strategy_config = dap.configurations.typescript[3]
+              -- strategy_config = dap.configurations.typescript[3]
             }),
           },
         })

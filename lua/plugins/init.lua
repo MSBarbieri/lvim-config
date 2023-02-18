@@ -22,12 +22,12 @@ function M.setup(_)
     { 'leoluz/nvim-dap-go', config = function()
       require('dap-go').setup()
     end },
-    { "mxsdev/nvim-dap-vscode-js", dependencies = { "mfussenegger/nvim-dap" } },
-    {
-      "microsoft/vscode-js-debug",
-      lazy = true,
-      build = "npm install --legacy-peer-deps && npm run compile"
-    },
+    --    { "mxsdev/nvim-dap-vscode-js", dependencies = { "mfussenegger/nvim-dap" } },
+    --    {
+    --      "microsoft/vscode-js-debug",
+    --      lazy = true,
+    --      build = "npm install --legacy-peer-deps && npm run compile"
+    --    },
     { 'vala-lang/vala.vim' },
   }
   require('plugins.test').setup(_)
