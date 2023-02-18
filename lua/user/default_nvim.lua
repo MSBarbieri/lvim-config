@@ -25,7 +25,7 @@ vim.opt.foldlevelstart = 99
 vim.opt.foldlevel = 0
 vim.opt.foldmethod = 'indent'
 vim.o.foldcolumn = '0'
-vim.o.spell = true
+vim.o.spell = false
 vim.o.spell = "en_us"
 
 vim.g.cheat_default_window_layout = 'vertical_split'
