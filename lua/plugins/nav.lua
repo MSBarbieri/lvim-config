@@ -15,33 +15,38 @@ function M.setup(_)
       end,
     },
     { "ThePrimeagen/harpoon" },
-    { "windwp/nvim-spectre", config = function() -- Super Search
-      require("spectre").setup({
-        mapping = {
-          ['send_to_qf'] = {
-            map = "<leader>e",
-            cmd = "<cmd>lua require('spectre.actions').send_to_qf()<CR>",
-            desc = "send all item to quickfix"
-          },
-        }
-      })
-    end },
+    {
+      "windwp/nvim-spectre",
+      config = function() -- Super Search
+        require("spectre").setup({
+          mapping = {
+            ['send_to_qf'] = {
+              map = "<leader>e",
+              cmd = "<cmd>lua require('spectre.actions').send_to_qf()<CR>",
+              desc = "send all item to quickfix"
+            },
+          }
+        })
+      end
+    },
     { 'kevinhwang91/nvim-bqf' }, -- BETTER quickfix
-    { "kylechui/nvim-surround", --  the YSSR
-      version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    {
+      "kylechui/nvim-surround",  --  the YSSR
+      version = "*",             -- Use for stability; omit to use `main` branch for the latest features
       config = function()
         require("nvim-surround").setup({
           -- Configuration here, or leave empty to use defaults
         })
-      end },
+      end
+    },
     {
       'gnikdroy/projections.nvim',
       config = function()
         require("projections").setup({
           workspaces = {
-            "~/dev/repos",
-            "~/dev/repos/MSBarbieri",
-            "~/.config",
+            os.getenv('HOME') .. "/dev",
+            os.getenv('HOME') .. "/dev/*",
+            os.getenv('HOME') .. "/.config",
           },
         })
 
@@ -53,6 +58,14 @@ function M.setup(_)
         })
 
         vim.opt.sessionoptions:append("localoptions") -- Save localoptions to session file
+
+        -- Switch to project if vim was started in a project dir
+        local switcher = require("projections.switcher")
+        vim.api.nvim_create_autocmd({ "VimEnter" }, {
+          callback = function()
+            if vim.fn.argc() == 0 then switcher.switch(vim.loop.cwd()) end
+          end,
+        })
       end
     },
   }
