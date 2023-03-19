@@ -8,7 +8,7 @@ function M.setup(opts)
   require "user.default_nvim"
   require "user.harpoon"
   require "user.worktree"
-  require('user.core').setup()
+  require('user.core').setup(opts)
 end
 
 return M

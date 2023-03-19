@@ -1,15 +1,13 @@
 local M = {}
 
-function M.setup()
-
+function M.setup(_)
   local startify = require('alpha.themes.startify')
   local function inputs()
-
     local output = {
       type = 'group',
       val = {
         { type = "padding", val = 1 },
-        { type = "text", val = "Code Links", opts = { hl = "SpecialComment", shrink_margin = false } },
+        { type = "text",    val = "Code Links", opts = { hl = "SpecialComment", shrink_margin = false } },
         { type = "padding", val = 1 },
         startify.button("i", "restore this project",
           '<cmd>lua require("projections.switcher").switch(vim.loop.cwd())<cr>'),
@@ -22,13 +20,12 @@ function M.setup()
         -- startify.button("u", "awesome config", "<cmd>edit ~/.config/awesome/rc.lua<cr>"),
 
         { type = "padding", val = 1 },
-        { type = "text", val = "Links", opts = { hl = "SpecialComment", shrink_margin = false } },
+        { type = "text",    val = "Links", opts = { hl = "SpecialComment", shrink_margin = false } },
         { type = "padding", val = 1 },
         startify.button("e", "New File", "<CMD>ene!<CR>"),
         startify.button("n", "Obsidian Note", "<cmd>ObsidianNew<cr>"),
         startify.button("w", "Wiki", "<cmd>VimwikiIndex<cr>"),
       }
-
     }
     return output
   end
