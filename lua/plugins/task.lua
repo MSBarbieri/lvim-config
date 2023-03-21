@@ -1,20 +1,24 @@
 local M = {}
 function M.setup(_)
   local plugins = {
-    { "epwalsh/obsidian.nvim", dependencies = {
-      'junegunn/fzf',
-      'nvim-telescope/telescope.nvim',
-      'preservim/vim-markdown',
-    }, config = function()
-      require('obsidian').setup({
-        dir = "~/Dropbox/obsidian",
-        notes_subdir = "notes",
-        daily_notes = {
-          folder = "notes/dailies",
-        },
-        use_advanced_uri = true,
-      })
-    end },
+    {
+      "epwalsh/obsidian.nvim",
+      dependencies = {
+        'junegunn/fzf',
+        'nvim-telescope/telescope.nvim',
+        'preservim/vim-markdown',
+      },
+      config = function()
+        require('obsidian').setup({
+          dir = "~/Dropbox/obsidian",
+          notes_subdir = "notes",
+          daily_notes = {
+            folder = "notes/dailies",
+          },
+          use_advanced_uri = true,
+        })
+      end
+    },
     -- { "tools-life/taskwiki", dependencies = {
     { 'majutsushi/tagbar' },
     { 'powerman/vim-plugin-AnsiEsc' },

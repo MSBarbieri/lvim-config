@@ -5,7 +5,7 @@ local M = {}
 function M.setup(_)
   lvim.plugins = {
     { "RishabhRD/nvim-cheat.sh" },
-    { 'scalameta/nvim-metals', dependencies = { "nvim-lua/plenary.nvim" } },
+    { 'scalameta/nvim-metals',  dependencies = { "nvim-lua/plenary.nvim" } },
     {
       'glacambre/firenvim', build = function() vim.fn['firenvim#install'](0) end
     },
@@ -19,9 +19,12 @@ function M.setup(_)
         require "octo".setup()
       end
     },
-    { 'leoluz/nvim-dap-go', config = function()
-      require('dap-go').setup()
-    end },
+    {
+      'leoluz/nvim-dap-go',
+      config = function()
+        require('dap-go').setup()
+      end
+    },
     --    { "mxsdev/nvim-dap-vscode-js", dependencies = { "mfussenegger/nvim-dap" } },
     --    {
     --      "microsoft/vscode-js-debug",
