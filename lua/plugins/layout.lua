@@ -79,16 +79,7 @@ function M.setup(_)
         })
       end
     },
-    {
-      'krivahtoo/silicon.nvim',
-      build = './install.sh',
-      config = function()
-        require('silicon').setup({
-          font = 'FiraCode Nerd Font=16',
-          theme = 'tokyonight',
-        })
-      end
-    }
+    { 'barrett-ruth/import-cost.nvim' }
   }
 
   for _, p in pairs(plugins) do
