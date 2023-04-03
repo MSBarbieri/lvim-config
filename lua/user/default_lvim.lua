@@ -17,3 +17,6 @@ lvim.builtin.gitsigns.opts.current_line_blame = true
 vim.wo.colorcolumn = "80,100"
 lvim.builtin.autopairs.active = true
 lvim.builtin.project.active = true
+lvim.builtin.cmp.active = true
+lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
+table.insert(lvim.builtin.cmp.sources, 1, { name = "copilot" })

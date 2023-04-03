@@ -32,6 +32,38 @@ function M.setup(_)
     --      build = "npm install --legacy-peer-deps && npm run compile"
     --    },
     { 'vala-lang/vala.vim' },
+    {
+      "zbirenbaum/copilot.lua",
+      event = { "VimEnter" },
+      config = function()
+        ---@diagnostic disable-next-line: param-type-mismatch
+        vim.defer_fn(function()
+          require("copilot").setup({
+            plugin_manager_path = get_runtime_dir() .. "/site/pack/packer",
+            panel = {
+              layout = {
+                position = "right",
+                ratio = 0.5,
+              }
+            },
+            suggestion = {
+              enable = true,
+              auto_trigger = true,
+              keymap = {
+                next = "<C-h>",
+                prev = "<C-l>",
+                accept = "<C-c>"
+              },
+            }
+          })
+        end, 100)
+      end,
+    },
+    {
+      "zbirenbaum/copilot-cmp",
+      after = { "copilot.lua", "nvim-cmp" },
+    },
+    { "tpope/vim-fugitive" }
   }
   require('plugins.test').setup(_)
   require('plugins.layout').setup(_)
