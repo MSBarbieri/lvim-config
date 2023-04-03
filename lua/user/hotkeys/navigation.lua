@@ -2,17 +2,16 @@ local harpoon = require("harpoon.ui")
 
 lvim.builtin.which_key.mappings["h"] = {
   name = "harpoon",
-  p = { function()
+  h = { function()
     harpoon.nav_prev()
   end, "prev" },
-  n = { function()
+  l = { function()
     harpoon.nav_next()
   end, "next" },
   a = { ":lua require('harpoon.mark').add_file()<cr>", "add" },
   t = { function()
     harpoon.toggle_quick_menu()
   end, "ui toggle" },
-
   ['+'] = { function()
     harpoon.nav_file(1)
   end, "nav to file 1" },
@@ -46,7 +45,6 @@ lvim.builtin.which_key.mappings["h"] = {
 }
 
 local function hop_keys(mode)
-
   lvim.keys[mode]['s'] = function()
     require("hop").hint_char2({
       direction = require 'hop.hint'.HintDirection.AFTER_CURSOR,

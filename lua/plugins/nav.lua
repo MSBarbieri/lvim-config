@@ -45,7 +45,7 @@ function M.setup(_)
         require("projections").setup({
           workspaces = {
             os.getenv('HOME') .. "/dev",
-            os.getenv('HOME') .. "/dev/*",
+            os.getenv('HOME') .. "/dev/MSBarbieri",
             os.getenv('HOME') .. "/.config",
           },
         })
