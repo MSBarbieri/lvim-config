@@ -23,7 +23,6 @@ function M.setup(_)
         { type = "text",    val = "Links", opts = { hl = "SpecialComment", shrink_margin = false } },
         { type = "padding", val = 1 },
         startify.button("e", "New File", "<CMD>ene!<CR>"),
-        startify.button("n", "Obsidian Note", "<cmd>ObsidianNew<cr>"),
         startify.button("w", "Wiki", "<cmd>VimwikiIndex<cr>"),
       }
     }

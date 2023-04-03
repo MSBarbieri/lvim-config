@@ -1,7 +1,6 @@
 require("user.hotkeys.lvim")
 require("user.hotkeys.git")
 require("user.hotkeys.navigation")
-require("user.hotkeys.obsidian")
 require("user.hotkeys.focus")
 require("user.hotkeys.spell")
 local search = require("user.hotkeys.search")

@@ -6,7 +6,6 @@ local search = function()
     a = { require("lvim.core.telescope.custom-finders").find_project_files, "Find File" },
     h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
     H = { "<cmd>Telescope highlights<cr>", "Find highlight groups" },
-    o = { '<cmd>ObsidianSearch<cr>', 'Obsidian search' },
     M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
     p = { "<cmd>Telescope projections<cr>", "projects" },
     z = { "<cmd>ZkNotes<cr>", "Zk Notes" },

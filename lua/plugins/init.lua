@@ -34,7 +34,6 @@ function M.setup(_)
     { 'vala-lang/vala.vim' },
   }
   require('plugins.test').setup(_)
-  require('plugins.task').setup(_)
   require('plugins.layout').setup(_)
   require('plugins.nav').setup(_)
 end
