@@ -2,11 +2,11 @@ lvim.builtin.lualine.options.theme = "tokyonight"
 lvim.builtin.lualine.style = "default"
 lvim.builtin.lualine.active = true
 
-lvim.colorscheme = "tokyonight-night"
+lvim.colorscheme = "tokyonight"
 -- colorscheme
 require('tokyonight').setup({
   style = "night",
-  transparent = true,
+  transparent = false,
   styles = {
     floats = "transparent",
     sidebars = "transparent"

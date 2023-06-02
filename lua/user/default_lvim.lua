@@ -10,7 +10,6 @@ lvim.builtin.terminal.active = true
 lvim.builtin.dap.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 
-
 lvim.builtin.gitsigns.opts.numhl = true
 lvim.builtin.gitsigns.opts.current_line_blame = true
 

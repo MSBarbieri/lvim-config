@@ -14,7 +14,17 @@ function M.setup(_)
         })
       end,
     },
-    { "ThePrimeagen/harpoon" },
+    {
+      "ThePrimeagen/harpoon",
+      config = function()
+        require('harpoon').setup({
+          menu = {
+            width = vim.api.nvim_win_get_width(0) - 4,
+            height = 8
+          }
+        })
+      end
+    },
     {
       "windwp/nvim-spectre",
       config = function() -- Super Search
@@ -36,35 +46,6 @@ function M.setup(_)
       config = function()
         require("nvim-surround").setup({
           -- Configuration here, or leave empty to use defaults
-        })
-      end
-    },
-    {
-      'gnikdroy/projections.nvim',
-      config = function()
-        require("projections").setup({
-          workspaces = {
-            os.getenv('HOME') .. "/dev",
-            os.getenv('HOME') .. "/dev/MSBarbieri",
-            os.getenv('HOME') .. "/.config",
-          },
-        })
-
-        require('telescope').load_extension('projections')
-        -- Autostore session on VimExit
-        local Session = require("projections.session")
-        vim.api.nvim_create_autocmd({ 'VimLeavePre' }, {
-          callback = function() Session.store(vim.loop.cwd()) end,
-        })
-
-        vim.opt.sessionoptions:append("localoptions") -- Save localoptions to session file
-
-        -- Switch to project if vim was started in a project dir
-        local switcher = require("projections.switcher")
-        vim.api.nvim_create_autocmd({ "VimEnter" }, {
-          callback = function()
-            if vim.fn.argc() == 0 then switcher.switch(vim.loop.cwd()) end
-          end,
         })
       end
     },

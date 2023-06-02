@@ -71,6 +71,12 @@ function M.setup(_)
     { 'RishabhRD/popfix' },
     { "ThePrimeagen/git-worktree.nvim" },
     {
+      "rmagatti/goto-preview",
+      config = function()
+        require('goto-preview').setup()
+      end
+    },
+    {
       'jghauser/fold-cycle.nvim',
       config = function()
         require('fold-cycle').setup({
@@ -79,7 +85,8 @@ function M.setup(_)
         })
       end
     },
-    { 'barrett-ruth/import-cost.nvim' }
+    { 'barrett-ruth/import-cost.nvim' },
+    { 'nordtheme/vim' }
   }
 
   for _, p in pairs(plugins) do
