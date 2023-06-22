@@ -51,7 +51,6 @@ function M.setup(_)
       end
     },
     { "tpope/vim-fugitive" },
-    { "wakatime/vim-wakatime" }
   }
   require('plugins.test').setup(_)
   require('plugins.layout').setup(_)
